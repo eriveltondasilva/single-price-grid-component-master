@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+/* #BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* #TYPOGRAPHY */
+html {
+  font: normal 16px/1.5 "Karla", "Verdana", "Open Sans", "Helvetica", "Arial", sans-serif;
+}
+
+.card--secondary {
+  font-weight: 400;
+}
+
+.card__price {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+}
+
+.card__price--tag {
+  font-size: 1rem;
+  margin-left: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.card--secondary > .card__body {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+footer {
+  text-align: center;
+}
+
+/* #LAYOUT */
+main {
+  display: grid;
+}
+
+main > .card--large {
+  grid-column: 2 span;
+}
+
+/* #COMPONENTS */
+main {
+  width: 650px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.card {
+  padding: 50px;
+}
+.card--primary {
+  border-bottom-left-radius: 10px;
+}
+.card--secondary {
+  border-bottom-right-radius: 10px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  background-color: hsl(71, 73%, 54%);
+  border-radius: 4px;
+  padding: 8px 0;
+}
+
+/* #THEME */
+body {
+  background-color: hsl(204, 43%, 93%);
+}
+
+main {
+  background-color: #fff;
+  box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card__title {
+  color: hsl(179, 62%, 43%);
+}
+.card__subtitle {
+  color: hsl(71, 73%, 54%);
+}
+.card__body {
+  color: hsl(218, 22%, 67%);
+}
+.card--primary {
+  background-color: hsl(179, 62%, 43%);
+}
+.card--secondary {
+  background-color: #4abebb;
+}
+
+.text--white {
+  color: #fff;
+}
+
+/* #UTILITIES */

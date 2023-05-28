@@ -1,0 +1,215 @@
+@charset 'utf-8';
+
+
+
+// --------------------
+// #SETTINGS
+// --------------------
+
+// imports
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+// fonts
+$sansserif-stack: ('Verdana', 'Open Sans', 'Helvetica', 'Arial', sans-serif);
+$serif-stack: ('Times New Roman', 'Georgia', serif);
+$font-karla: ('Karla', $sansserif-stack);
+
+// color names
+$color-Cyan: hsl(179, 62%, 43%);
+$color-BrightYellow: hsl(71, 73%, 54%);
+$color-LightGray: hsl(204, 43%, 93%);
+$color-GrayishBlue: hsl(218, 22%, 67%);
+
+// colors
+$color-background: $color-GrayishBlue;
+$color-surface: $color-LightGray;
+$color-surfaceVariant: $color-Cyan;
+
+$text-title: $color-Cyan;
+$text-white: #fff;
+$text-subtitle: $color-BrightYellow;
+$text-body: $color-GrayishBlue;
+
+$color-button: $color-BrightYellow;
+
+
+// variables
+
+
+
+// --------------------
+// #TOOLS
+// --------------------
+
+// *functions
+
+/// Função 'lighter()'
+/// @param {color} $color - a cor que será deixada mais clara.
+/// @param {number} $percent [80%] - a porcentagem de 100% até 0%, quanto menor mais claro.
+/// @return {color} returna uma cor mais clara.
+@function lighter($color, $percent: 80%) {
+    @return mix($color, #fff, $percent);
+}
+
+/// Função 'darker()'
+/// @param {color} $color - a cor que será deixada mais escura.
+/// @param {number} $percent [80%] - a porcentagem de 100% até 0%, quanto menor mais escuro.
+/// @return {color} returna uma cor mais escura.
+@function darker($color, $percent: 80%) {
+    @return mix($color, #000, $percent);
+}
+
+
+// *mixins
+
+@mixin flex-center {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+
+
+
+// --------------------
+/* #BASE */
+// --------------------
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width : 100%;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+// --------------------
+/* #TYPOGRAPHY */
+// --------------------
+
+html {
+    font: normal 16px / 1.5 $font-karla;
+}
+
+.card--secondary {
+    font-weight: 400;
+}
+
+.card__price {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.card__price--tag {
+    font-size: 1rem;
+    margin-left: 12px;
+    color: rgba($text-white, 0.5)
+
+}
+
+.card--secondary > .card__body {
+    font-size: 0.9rem;
+    color: rgba($text-white, 0.7)
+}
+
+footer {
+    text-align: center;
+}
+
+
+// --------------------
+/* #LAYOUT */
+// --------------------
+
+// *grid
+main {
+    display: grid;
+}
+
+main > .card--large {
+    grid-column: 2 span;
+}
+
+
+// --------------------
+/* #COMPONENTS */
+// --------------------
+
+main {
+    width: 650px;
+    margin: 20px auto;
+    border-radius: 10px;
+    
+}
+
+.card {
+    padding: 50px;
+
+    &--primary {
+        border-bottom-left-radius: 10px;
+    }
+    &--secondary {
+        border-bottom-right-radius: 10px;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    background-color: $color-button;
+    border-radius: 4px;
+    padding: 8px 0;
+}
+
+
+// --------------------
+/* #THEME */
+// --------------------
+
+body {
+    background-color: $color-surface;
+}
+
+main {
+    background-color: $text-white;
+    box-shadow: 0px 0px 16px 4px rgba($color: #000000, $alpha: 0.1);
+}
+
+.card {
+    &__title {
+        color: $text-title;
+    }
+    &__subtitle {
+        color: $text-subtitle;
+    }
+    &__body {
+        color: $text-body;
+    }
+
+    &--primary {
+        background-color: $color-surfaceVariant;
+    }
+    &--secondary {
+        background-color: lighter($color-surfaceVariant, 85);
+    }
+}
+
+.text--white {
+    color: $text-white;
+}
+
+// --------------------
+/* #UTILITIES */
+// --------------------
+
+
+
