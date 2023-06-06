@@ -41,7 +41,6 @@ Users should be able to:
 -   BEM
 -   ITCSS
 -   SASS
--   [Vue.js](https://vuejs.org/) - JS Framework
 
 ## Author
 
