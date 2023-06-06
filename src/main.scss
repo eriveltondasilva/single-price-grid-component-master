@@ -129,13 +129,13 @@ footer {
 
 // *grid
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display           : grid;
+    grid-template-rows: 1fr auto;
 }
 
 main {
     display: grid;
+    margin: auto;
     grid-template: auto / 1fr 1fr;
 }
 
@@ -151,7 +151,6 @@ main {
 
 main {
     max-width    : 650px;
-    margin       : 20px auto;
     border-radius: 10px;
 }
 
