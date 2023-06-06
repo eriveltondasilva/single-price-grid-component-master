@@ -1,7 +1,5 @@
 @charset 'utf-8';
 
-
-
 // --------------------
 // #SETTINGS
 // --------------------
@@ -11,29 +9,29 @@
 
 // fonts
 $sansserif-stack: ('Verdana', 'Open Sans', 'Helvetica', 'Arial', sans-serif);
-$serif-stack: ('Times New Roman', 'Georgia', serif);
-$font-karla: ('Karla', $sansserif-stack);
+$serif-stack    : ('Times New Roman', 'Georgia', serif);
+$font-karla     : ('Karla', $sansserif-stack);
 
 // color names
-$color-Cyan: hsl(179, 62%, 43%);
+$color-Cyan        : hsl(179, 62%, 43%);
 $color-BrightYellow: hsl(71, 73%, 54%);
-$color-LightGray: hsl(204, 43%, 93%);
-$color-GrayishBlue: hsl(218, 22%, 67%);
+$color-LightGray   : hsl(204, 43%, 93%);
+$color-GrayishBlue : hsl(218, 22%, 67%);
 
 // colors
-$color-background: $color-GrayishBlue;
-$color-surface: $color-LightGray;
+$color-background    : $color-GrayishBlue;
+$color-surface       : $color-LightGray;
 $color-surfaceVariant: $color-Cyan;
 
-$text-title: $color-Cyan;
-$text-white: #fff;
+$text-title   : $color-Cyan;
+$text-white   : #fff;
 $text-subtitle: $color-BrightYellow;
-$text-body: $color-GrayishBlue;
+$text-body    : $color-GrayishBlue;
 
 $color-button: $color-BrightYellow;
 
-
 // variables
+$border: 10px;
 
 
 
@@ -59,14 +57,7 @@ $color-button: $color-BrightYellow;
     @return mix($color, #000, $percent);
 }
 
-
 // *mixins
-
-@mixin flex-center {
-  display        : flex;
-  justify-content: center;
-  align-items    : center;
-}
 
 
 
@@ -76,8 +67,8 @@ $color-button: $color-BrightYellow;
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin    : 0;
+    padding   : 0;
 }
 
 body {
@@ -90,6 +81,7 @@ a {
 }
 
 
+
 // --------------------
 /* #TYPOGRAPHY */
 // --------------------
@@ -98,31 +90,37 @@ html {
     font: normal 16px / 1.5 $font-karla;
 }
 
-.card--secondary {
-    font-weight: 400;
+.card {
+    &__price {
+        font: {
+            size  : 2.25rem;
+            weight: 700;
+        }
+        &--tag {
+            font-size  : 1rem;
+            margin-left: 12px;
+        }
+    }
+    &__title {
+        font-size: 1.3rem;
+    }
+    &__body {
+        font-size: 1rem;
+    }
+
+    &--secondary {
+        font-weight: 400;
+    }
 }
 
-.card__price {
-    display: flex;
-    align-items: center;
-    font-size: 2.5rem;
-}
-
-.card__price--tag {
-    font-size: 1rem;
-    margin-left: 12px;
-    color: rgba($text-white, 0.5)
-
-}
-
-.card--secondary > .card__body {
-    font-size: 0.9rem;
-    color: rgba($text-white, 0.7)
+.button {
+    font-weight: 700;
 }
 
 footer {
     text-align: center;
 }
+
 
 
 // --------------------
@@ -132,11 +130,13 @@ footer {
 // *grid
 main {
     display: grid;
+    grid-template: auto / 1fr 1fr;
 }
 
-main > .card--large {
+.card--large {
     grid-column: 2 span;
 }
+
 
 
 // --------------------
@@ -144,31 +144,63 @@ main > .card--large {
 // --------------------
 
 main {
-    width: 650px;
-    margin: 20px auto;
+    max-width    : 650px;
+    margin       : 20px auto;
     border-radius: 10px;
-    
 }
 
 .card {
-    padding: 50px;
+    padding: 40px;
+
+    &__title {
+        margin-bottom: 10px;
+    }
+    &__price {
+        display    : flex;
+        align-items: center;
+    }
 
     &--primary {
-        border-bottom-left-radius: 10px;
+        border-bottom-left-radius: $border;
     }
     &--secondary {
-        border-bottom-right-radius: 10px;
+        border-bottom-right-radius: $border;
     }
 }
 
 .button {
-    display: flex;
+    display        : flex;
     justify-content: center;
-    font-weight: 700;
-    background-color: $color-button;
-    border-radius: 4px;
-    padding: 8px 0;
+    border-radius  : 4px;
+    margin-top     : 30px;
+    padding        : 8px 0;
 }
+
+
+
+// --------------------
+/* #MEDIA QUERY */
+// --------------------
+
+@media screen and (max-width: 660px) {
+    main {
+        display       : flex;
+        flex-direction: column;
+        margin        : 20px;
+    }
+
+    .card {
+        border-radius: 0;
+
+        &:first-child {
+            border-radius: $border $border 0 0;
+        }
+        &:last-child {
+            border-radius: 0 0 $border $border;
+        }
+    }
+}
+
 
 
 // --------------------
@@ -181,7 +213,7 @@ body {
 
 main {
     background-color: $text-white;
-    box-shadow: 0px 0px 16px 4px rgba($color: #000000, $alpha: 0.1);
+    box-shadow      : 0px 0px 16px 4px rgba($color: #000000, $alpha: 0.1);
 }
 
 .card {
@@ -194,6 +226,9 @@ main {
     &__body {
         color: $text-body;
     }
+    &__price--tag {
+        color: rgba($text-white, 0.5);
+    }
 
     &--primary {
         background-color: $color-surfaceVariant;
@@ -201,15 +236,26 @@ main {
     &--secondary {
         background-color: lighter($color-surfaceVariant, 85);
     }
+    &--secondary > .card__body {
+        color: rgba($text-white, 0.7);
+    }
+}
+
+.button {
+    background-color: $color-button;
+    box-shadow      : 0 0 4px 2px rgba(#000, 0.1);
+
+    &:hover {
+        background-color: darker($color-button, 95);
+    }
 }
 
 .text--white {
     color: $text-white;
 }
 
+
+
 // --------------------
 /* #UTILITIES */
 // --------------------
-
-
-
