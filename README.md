@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [https://www.frontendmentor.io/solutions/advice-generator-app-main-using-vuejs-lq-c2AQfiy#comment-647432668cf70402ba372548](https://www.frontendmentor.io/solutions/advice-generator-app-main-using-vuejs-lq-c2AQfiy#comment-647432668cf70402ba372548)
+-   Solution URL: [https://www.frontendmentor.io/solutions/single-price-grid-component-TEl0j6j8x8](https://www.frontendmentor.io/solutions/single-price-grid-component-TEl0j6j8x8)
 -   Live Site URL: [https://single-price-grid-component-master-jade-tau.vercel.app/](https://single-price-grid-component-master-jade-tau.vercel.app/)
 
 ## My process
