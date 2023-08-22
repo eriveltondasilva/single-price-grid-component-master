@@ -102,7 +102,7 @@ html {
         }
     }
     &__title {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     &__body {
         font-size: 1rem;
@@ -128,8 +128,14 @@ footer {
 // --------------------
 
 // *grid
+body {
+    display           : grid;
+    grid-template-rows: 1fr auto;
+}
+
 main {
     display: grid;
+    margin: auto;
     grid-template: auto / 1fr 1fr;
 }
 
@@ -145,7 +151,6 @@ main {
 
 main {
     max-width    : 650px;
-    margin       : 20px auto;
     border-radius: 10px;
 }
 
